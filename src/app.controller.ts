@@ -15,10 +15,22 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Post("/jopa")
+  @Post("/jopacontr")
   Jopa(@Body() Body) {
+    // const Bodytest = `{"RecordSet":[{}]}`;
+    return this.appService.AddCont(Body)
+  }
+
+  @Post("/jopabarcode")
+  arcodeJo(@Body() Body) {
     const Bodytest = `{"RecordSet":[{}]}`;
-    return this.appService.AddAlcocode(Body)
+    return this.appService.AddBarcode(Body)
+  }
+
+  @Post("/jopaplu")
+  arcodeJopa(@Body() Body) {
+    const Bodytest = `{"RecordSet":[{}]}`;
+    return this.appService.AddPlu(Body);
   }
 
   @Post('/repiatjson')
